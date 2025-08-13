@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab Content Layout</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        transition: background-color 0.5s ease;
+      }
+      .tab-container {
+        margin-bottom: 20px;
+      }
+      .tab-buttons {
+        display: flex;
+        margin-bottom: 10px;
+      }
+      .tab-btn {
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin-right: 5px;
+        transition: background-color 0.3s;
+        color: white;
+      }
+      .yellow-btn {
+        background-color: gold;
+      }
+      .green-btn {
+        background-color: seagreen;
+      }
+      .pink-btn {
+        background-color: hotpink;
+      }
+      .tab-btn:hover {
+        opacity: 0.8;
+      }
+      .tab-btn.active {
+        outline: 2px solid black;
+      }
+      .tab-content {
+        display: none;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-top: none;
+        animation: fadeEffect 1s;
+      }
+      @keyframes fadeEffect {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .tab-content.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tab Content Layout</h1>
+    <div class="tab-container">
+      <div class="tab-buttons">
+        <button
+          class="tab-btn yellow-btn active"
+          onclick="openTab(event, 'Contact1', 'yellow')"
+        >
+          Color 1
+        </button>
+        <button
+          class="tab-btn green-btn"
+          onclick="openTab(event, 'Contact2', 'lightgreen')"
+        >
+          Color 2
+        </button>
+        <button
+          class="tab-btn pink-btn"
+          onclick="openTab(event, 'Contact3', 'lightpink')"
+        >
+          Color 3
+        </button>
+      </div>
+      <div id="Contact1" class="tab-content active">
+        <h2>This is Contact 1</h2>
+        <p>Content for contact 1 goes here.</p>
+      </div>
+      <div id="Contact2" class="tab-content">
+        <h2>This is Contact 2</h2>
+        <p>Content for contact 2 goes here.</p>
+      </div>
+      <div id="Contact3" class="tab-content">
+        <h2>This is Contact 3</h2>
+        <p>Content for contact 3 goes here.</p>
+      </div>
+    </div>
+    <script>
+      function openTab(evt, tabName, bgColor) {
+        document.body.style.backgroundColor = bgColor;
+        const tabContents = document.getElementsByClassName("tab-content");
+        for (let i = 0; i < tabContents.length; i++) {
+          tabContents[i].classList.remove("active");
+        }
+        const tabButtons = document.getElementsByClassName("tab-btn");
+        for (let i = 0; i < tabButtons.length; i++) {
+          tabButtons[i].classList.remove("active");
+        }
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+      }
+      document.body.style.backgroundColor = "yellow";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Window Object Method</title>
+</head>
+<body>
+    <h1>Window Object Methods</h1>
+    <p>This page demonstrates various window object methods.</p>
+    <script>
+        alert("This is an alert box");
+        var result = confirm("Do you want to continue?");
+        console.log("User clicked: " + (result ? "OK" : "Cancel"));
+        var name = prompt("Enter your name:", "John Doe");
+        if (name) {
+            console.log("User entered name: " + name);
+        } else {
+            console.log("User cancelled the prompt");
+        }
+        function openPrintDialog() {
+            window.print();
+        }
+        setTimeout(openPrintDialog, 1000);
+    </script>
+    <button onclick="openPrintDialog()">Print This Page</button>
+</body>
+</html>

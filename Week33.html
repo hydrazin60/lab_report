@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Example</title>
+    <style>
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      /* ID Selector */
+      #title {
+        color: green;
+        font-size: 32px;
+      }
+      /* Class Selector */
+      .bordered {
+        width: 300px;
+        border: 3px solid #000000;
+        float: right;
+        margin-right: 20px;
+      }
+      /* ID Selector */
+      #introduction {
+        font-size: 20px;
+        color: #447123;
+      }
+      /* Class Selector */
+      .emphasis {
+        font-style: italic;
+        font-weight: bold;
+        color: blue;
+      }
+      /* Element Selector */
+      h1,
+      h2 {
+        font-family: "Verdana", sans-serif;
+        color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">Welcome to CSS Learning</h1>
+    <p id="introduction" class="emphasis">
+      CSS helps style your web pages easily.
+    </p>
+    <p class="emphasis">This paragraph uses a class to emphasize its text.</p>
+    <h2>CSS Class & ID</h2>
+    <img
+      src="https://tse3.mm.bing.net/th/id/OIP.ZscslXeQWRhCqpLTW5qBHQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+      alt="Sample Image"
+      class="bordered"
+    />
+    <p>This is a simple paragraph without any class or id.</p>
+  </body>
+</html>
